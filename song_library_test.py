@@ -2,6 +2,9 @@
 #song library test
 
 import unittest
+import src
+import song_library
+import song
 from song_library import Song_Library
 from song import Song
 

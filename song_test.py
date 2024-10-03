@@ -1,8 +1,9 @@
 #Joel Xu
 #Song finder test
 
-from song import Song
 import unittest
+import src
+from src.song import Song
 
 class song_test(unittest.TestCase):
     """tests the functions of the song.py
