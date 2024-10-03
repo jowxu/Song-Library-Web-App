@@ -1,0 +1,25 @@
+<!doctype html>
+    <title>{{title}} by {{artist}}</title>
+
+    <h2>{{title}}</h2>
+    <ul>
+        <li>Song: {{song.title}}</li>
+        <li>Track ID: {{track_id}}</li>
+        <li>Artist: {{artist}}</li>
+        <li>Tags:</li>
+        <ul>
+            {% for tag in tags %}
+                <li>{{tag}}</li>
+            {% endfor %}
+        </ul>
+        <li>Similar Songs:</li>
+        <ul>
+            {% for similar, stitle, sartist in similars %}
+                <li><a href="/{{similar}}">{{stitle}} by {{sartist}}</a></li>
+            {% endfor %}
+        </ul>
+    </ul>
+
+    <a href='/'>Return to Main Page</a>
+
+</html>

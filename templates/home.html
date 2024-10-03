@@ -1,0 +1,33 @@
+<!doctype html>
+    <title>Song Finder</title>
+    <h1>Song Finder</h1>
+        <span>
+        <p>
+        <b>Popular Tags: </b>|
+        {% for tag in popular_tags %}
+            {{tag}} |
+        {% endfor %}
+        </p>
+        </span>
+    <form action="/">
+        <select name=categories method="GET" action="/">
+            {% for category in categories %}
+            <option value="{{category}}" SELECTED>{{category}}</option>
+            {%  endfor %}
+            <input type="text" name="search">
+            <input type="submit" value="Search">
+        </select>
+        <h2>Search Query: {{search}} | Search Type: {{search_category}}</h2>
+        <ul>
+            {% for key in query %}
+                <li>{{ key }}</li>
+                <ul>
+                {% for title, track_id in query[key] %}
+                    <li><a href="/{{track_id}}">{{ title }}</a></li>
+                {% endfor %}
+                </ul>
+            {% endfor %}
+        </ul>
+    </form> 
+
+</html>
